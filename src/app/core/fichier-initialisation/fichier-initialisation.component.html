@@ -1,0 +1,33 @@
+<div>
+    <h1 class=" d-flex justify-content-center">Simulation Robot Tondeuse</h1>
+    <p class="mt-5">
+        <strong class="alert alert-dark" role="alert" >Glisse ci-dessous ton fichier d'initialisation de la simulation robot Tondeuse
+            (Si tu ne veux pas le récréer toi même car tu n'as pas que cela à faire, il se trouve dans app/initSimulation.</strong>
+    </p>
+    <input type="file" (change)="onChange($event.target.files)">
+    <div>
+        <h2>Ici le contenu de ton fichier parsé par mes soins</h2>
+        <h4> {{fileContent}} </h4>
+    </div>  
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-8" *ngIf="terrain !== undefined">
+                    <h3>Tableau un peu décalé des robots tondeuses</h3>
+                        <div *ngFor="let i of terrain.cases">
+                            <span class="col-sm-2" *ngFor="let j of i">
+                                {{j}}
+                            </span>
+                        </div>
+                        <div>Légende: Le nombre réprésente le numéro du robot, la lettre représente son orientation</div>
+                        <div> La simulation apparaissante à l'écran est l'état final de la simulation</div>
+                </div>
+                <div class="col-sm-4">Robot en cours</div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm-12">Robot fini</div>
+            </div>
+        </div>
+        <div class="toast-body col-sm-4">
+            Contacter l'auteur de ce chef d'oeuvre: <address>matteodelandhuypro@outlook.fr</address>
+        </div>
+</div>
